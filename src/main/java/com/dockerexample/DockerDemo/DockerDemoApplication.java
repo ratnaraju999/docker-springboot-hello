@@ -3,6 +3,7 @@ package com.dockerexample.DockerDemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -17,5 +18,10 @@ public class DockerDemoApplication {
 	    public String hello() {
 	        return "Hello World from Spring Boot in Docker!";
 	    }
+	 @GetMapping("/hello/{name}")
+	 public String helloName(@PathVariable String name) {
+	     return "Hello, " + name + "!";
+	 }
+
 
 }
